@@ -1,0 +1,177 @@
+/*Base Settings*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Bubblegum Sans";
+}
+
+:root{
+    --color-white: #fdfbf7 ;
+    --color-beige: #f4e7ce ;
+    --color-black: #0e0f15;
+    --color-pink-accent: #ff2498 ;
+    --color-blue-acccent: #203ad8 ;
+}
+
+body{
+  width: 100%;
+  height: 1000%;
+}
+
+
+/* Page Layout */
+.container {  display: grid;
+  grid-template-columns: 1fr 0fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: column;
+  grid-template-areas:
+    "topNavBar topNavBar topNavBar"
+    "page1Left . page1Right"
+    "page2Left . page2Right"
+    "page3 page3 page3"
+    "bottomNavBar bottomNavBar bottomNavBar";
+}
+
+.topNavBar{ 
+  grid-area: topNavBar; 
+}
+
+.page1Right {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+  grid-area: page1Right;
+}
+
+.page1Left { 
+  grid-area: page1Left; 
+}
+
+.page2Left { 
+  grid-area: page2Left; 
+}
+
+.page2Right { 
+  grid-area: page2Right; 
+}
+
+.bottomNavBar { 
+  grid-area: bottomNavBar; 
+}
+
+.page3 { 
+  grid-area: page3; 
+}
+
+
+
+/* Page's Flexbox Layout */
+.page1{
+    display: flex;
+    flex-direction: row;
+}
+
+.page1Left, .page1Right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2{
+  display: flex;
+  flex-direction: row;
+}
+
+.page2Left, .page2Right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Links Design */
+a{
+  color: var(--color-white);
+  text-decoration:none;
+  list-style:none;
+}
+
+.page1Right a{
+  background-color: var(--color-pink-accent);
+  padding: 15px;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.page2Left a{
+  background-color: var(--color-blue-acccent);
+  padding: 15px;
+  border-radius: 25px;
+  margin: 10px;
+  
+}
+
+.page3 a{
+  background-color: var(--color-pink-accent);
+  padding: 15px;
+  border-radius: 25px;
+  margin: 10px;
+  
+}
+
+/*Colors*/
+.topNavBar, .bottomNavBar{
+    background-color: var(--color-blue-acccent);
+    color: var(--color-white)
+}
+.page1Left, .page1Right{
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.page2Left, .page2Right{
+    background-color: var(--color-beige);
+    color: var(--color-black);
+}
+
+.page3{
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+/*Image Design*/
+
+#image1{
+    height: 400px;
+    width: 400px;
+}
+
+#image2, #image3{
+  height: 300px;
+  width: 300px;
+}
+
+#image2{
+    position: absolute;
+   
+}
+
+#image3{
+  margin-left: 20px;
+  margin-top: 20px;
+}

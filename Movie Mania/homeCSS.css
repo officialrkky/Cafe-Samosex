@@ -1,0 +1,171 @@
+/* Grid Display */
+body{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr 50px;
+    grid-template-areas:"header header"
+                        "page1 page1"
+                        "page2 page2"
+                        "footer footer";
+}
+
+.header{
+    grid-area: header;
+    grid-row: 1/2;
+    grid-column: 1/3;
+    max-height: 50px;
+    min-height: 50px;
+}
+
+#page1{
+    grid-area: page1;
+    grid-row: 2/3;
+    grid-column: 1/3;
+}
+
+#page2{
+    grid-area: page2;
+    grid-row: 3/4;
+    grid-column: 1/3;
+}
+
+.footer{
+    grid-area: footer;
+    grid-row: 5/6;
+    grid-column: 1/3;
+    max-height: 25px;
+    min-height: 25px;
+}
+
+/*Flex Display*/
+#page1, #page2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+marquee{
+    padding: 30px;
+}
+marquee img{
+    height: 375px;
+    width: 250px;
+    border: 0px;
+}
+
+
+
+
+
+/*Header and Footer Style */
+
+.header ul, .footer ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.header li, .footer ul{
+    list-style: none;
+}
+
+.header a, .footer ul{
+    text-decoration: none;
+}
+
+
+/*Link Style*/
+
+
+
+/*Colors*/
+.header, .footer{
+    background-color: var(--accent-color-1)
+}
+
+body{
+    background-image: linear-gradient(var(--primary-color), var(--secondary-color));
+}
+
+a{
+    color: var(--font-color-2)
+}
+a:hover{
+    color: var(--font-color-1);
+}
+
+
+/*Font Sizes*/
+#title{
+    font-size: 60px;
+    font-weight: 1000;
+}
+
+#slogan{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+/*Link Effect*/
+a:hover, button:hover{
+    cursor: pointer;
+}
+.header a{
+    position: relative;
+}
+
+.header a::after{
+    content: "";
+    position: absolute;
+    background-color: var(--primary-color);
+    height: 3px;
+    width: 0%;
+    left: 0;
+    bottom: 0px;
+    transition: 0.4s;
+}
+
+.header a:hover::after{
+    width: 100%;
+}
+
+/*Button Design*/
+#colorChange{
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent-color-1);
+    border: none;
+    color: var(--font-color-2);
+}
+
+#colorChange:hover{
+    color: var(--font-color-1)
+}
+
+
+
+
+marquee{
+    margin: 0 auto;
+    behavior: scroll;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+marquee img{
+    position: relative;
+    right: 100%;
+    cursor: pointer;
+}
+
+

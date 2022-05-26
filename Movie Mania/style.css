@@ -1,0 +1,24 @@
+/*Basic*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Koulen', cursive;
+}
+
+:root{
+    --primary-color: #F8869B ;
+    --secondary-color: #F54768 ;
+    --accent-color-1: #F10935 ;
+    --accent-color-2: #ff9677 ;
+    --font-color-1: #fdfbf7;
+    --font-color-2: #0e0f15;
+}
+
+.blue-mode{
+    --primary-color: #5DC4EB ;
+    --secondary-color: #21AEE4 ;
+    --accent-color-1: #9DDBF3 ;
+    --accent-color-2: #85f1fe ;
+    --font-color-1: #fdfbf7;
+    --font-color-2: #0e0f15;
+}
