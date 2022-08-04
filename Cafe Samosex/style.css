@@ -44,7 +44,6 @@ a{
 }
 
 ::selection{
-    background-color: var(--gold);
     color: var(--black)
 }
 
@@ -70,6 +69,8 @@ a{
 
 #logo{
     padding: 20px;
+    height: 80px;
+    width: 75px;
 }
 
 .headerNavBar li{
