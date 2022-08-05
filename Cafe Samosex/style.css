@@ -4,6 +4,7 @@
     padding: 0;
     color: var(--white);
     font-family: 'Jost', sans-serif;
+    overflow-x: hidden;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Jost&display=swap');
