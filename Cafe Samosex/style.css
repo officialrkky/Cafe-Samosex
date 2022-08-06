@@ -4,7 +4,6 @@
     padding: 0;
     color: var(--white);
     font-family: 'Jost', sans-serif;
-    overflow-x: hidden;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Jost&display=swap');
@@ -45,7 +44,8 @@ a{
 }
 
 ::selection{
-    color: var(--black)
+    background-color: var(--gold) !important;
+    color: var(--black);
 }
 
 
@@ -180,14 +180,32 @@ a{
 /* Home Styles */
 
 #homeLandingPageContainer{
-    background-image: url(images/homeBg.jpg);
+    /* background-image: url(images/homeBg.jpg);
     background-size: cover;
     background-position: center;
     background-color: rgba(0,0,0,0.5);
-    background-blend-mode: multiply;
+    /*background-blend-mode: multiply; 
+    filter:contrast(80%);
+    */
+
+    position: relative; 
+    
+}
+
+#homeLandingPageContainer::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url(images/homeBg.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(60%);
+    
 }
 
 #homeIntroContainer{
+    position: relative;
     height: 50vh;
     padding: 7%;
     display: flex;
@@ -196,8 +214,11 @@ a{
     align-items: center;
 }
 
+
 #homeIntro h1, #homeIntro h2{
     padding: 10px 0px ;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.5), 
+    0px -4px 10px rgba(0,0,0,0.5);
 }
 
 .accentColour{
@@ -235,16 +256,35 @@ a{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    
+    /* 
     background-image: url(images/introImg.jpg);
     background-position: center;
     background-size: cover;
     height: 30vh;
     background-color: rgba(0,0,0,0.5);
     background-blend-mode: multiply;
+    */
+
+    position: relative; 
 }
 
-.introContainer h2, .introContainer h3{
-    margin: 30px;
+.introContainer::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url(images/introImg.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(50%);
+}
+
+.introContainer h1, .introContainer h2{
+    position: relative;
+    margin-top: 20px;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.5), 
+    0px -4px 10px rgba(0,0,0,0.5);
 }
 
 .aboutUsContainer{
@@ -336,6 +376,7 @@ a{
     justify-content: center;
     align-items: center;
     background-color: var(--black);
+    overflow-x: hidden;
 }
 
 #menuCategory1{
