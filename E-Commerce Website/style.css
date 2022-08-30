@@ -1,0 +1,844 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    line-height: 64px;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 54px;
+}
+
+h3{
+    font-size: 25px;
+}
+
+h4{
+    font-size: 20px;
+}
+
+h6{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+p{
+    font-size: 16px;
+}
+
+:root{
+    --accent-1: #d4d5d7;
+    --accent-2: #666666;
+    --white: #fff;
+    --black: #000;
+}
+
+.button1{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px 30px;
+    color: var(--black);
+    background-color: var(--white);
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.button2{
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: var(--white);
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid var(--white);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Header */
+
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: var(--accent-1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.navbar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar li{
+    list-style: none;
+    padding: 0px 20px;
+    position: relative;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    color: var(--black);
+}
+
+.navbar a:hover, .navbar a.active{
+    transition: color 0.3s ease;
+    color: var(--accent-2);
+}
+
+.navbar a::after{
+    content: "";
+    position: absolute;
+    left: 20px;
+    bottom: -5px;
+    width: 40%;
+    height: 3px;
+    background-color: var(--accent-2);
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+
+}
+
+.navbar a:hover::after, .navbar a.active::after{
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+#logo{
+    color: var(--accent-2);
+    font-size: 35px;
+}
+
+.hamburgerContainer{
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+  
+  .hamburger{
+    width: 30px;
+    height: 3px;
+    border-radius: 5px;
+    background: black;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .hamburger::before,
+  .hamburger::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    border-radius: 5px;
+    background: black;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .hamburger::before{
+    transform: translateY(-10px);
+  }
+  
+  .hamburger::after{
+    transform: translateY(10px);
+  }
+  
+  .hamburgerContainer.menuIsOpen .hamburger{
+    transform: translateX(-50px);
+    background: transparent;
+  } 
+  
+  .hamburgerContainer.menuIsOpen .hamburger::before{
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  
+  .hamburgerContainer.menuIsOpen .hamburger::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+
+/* Home */
+
+.pageHeadBanner{ 
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px 80px;
+}
+
+#homeHeadBanner{
+    height: 100vh;
+    background-image: url(img/home/homeBanner.jpg);
+}
+
+#storeHeadBanner{
+    height: 40vh;
+    background-image: url(images/banners/b1.jpg);
+    justify-content: center;
+    align-items: center;
+    color: var(--white)
+}
+
+.pageHeadBanner h1, .pageHeadBanner h3{
+    padding-bottom: 20px;
+}
+
+.pageHeadBanner button{
+    background-image: url(images/button.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    color: var(--black);
+    font-weight: 700;
+    font-size: 15px;
+    border: 0;
+    padding: 15px 80px 15px 65px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+.pageHeadBanner button:hover{
+    transition: all 0.3s ease;
+    color: var(--white);
+}
+
+/* Categories */
+
+.categoriesContainer{
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.categoriesContainer .categoryBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    height: 115px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.categoriesContainer .categoryBox:hover{
+    cursor: pointer;
+    box-shadow: 10px 10px 54px rgba(70,62,221,0.1);
+    transition: all 0.2s ease;
+    background-color: var(--accent-2);
+    color: var(--white);
+}
+.categoriesContainer .categoryBox i{
+    font-size: 25px;
+}
+
+/* Universal Products Styles */
+.productContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0px 80px;
+}
+
+.product{
+    width: 23%;
+    margin: 1%;
+    min-width: 250px;
+    padding: 10px 15px;
+    border: 1px solid var(--accent-2);
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    position: relative;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: scale(0.99);
+}
+
+.product:hover{
+    box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+
+}
+.product .img{
+    
+    height: 10%;
+    width: 20px;
+    margin: 0 auto;
+}
+
+.product .productDescription{
+    width: 100%;
+    height: 40%;
+    padding: 15px 0px;
+}
+
+.product .productDescription span{
+    color: var(--accent-2);
+    font-size: 12px;
+    padding: 70px 0px;
+}
+
+.product .productDescription h3{
+    color: var(--black);
+    font-size: 25px;
+    padding-bottom: 7px;
+}
+
+.product .productDescription h4{
+    color: var(--accent-2);
+    font-size: 14px;
+    padding-bottom: 7px;
+}
+
+.product .productDescription .starRating i{
+    font-size: 12px;
+    color: rgb(243,181,25);
+    padding-bottom: 10px;
+
+}
+
+.product .productDescription h4{
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.product .addToCart{
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--accent-2);
+    color: var(--white);
+    border: 1px solid var(--accent-2);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.product .addToCart:hover{
+    transition: all 0.3s ease;
+    background-color: var(--accent-1) !important;
+    color: var(--black) !important;
+}
+
+#cart{
+    font-size: 18px;
+}
+
+.fa-cart-shopping{
+    background-color: var(--accent-2) !important;
+    color: var(--white) !important;
+}
+
+.fa-check{
+    color: var(--accent-2) !important;
+    background-color: var(--white) !important;
+}
+
+
+
+
+
+/* Shop Iphone */
+
+.storeProductsContainer img{
+    width: 250px;
+    
+}
+
+.shopIphoneProducts{
+    padding: 80px 80px;
+    text-align: left;
+}
+
+.shopIphone{
+    height: 500px;
+}
+
+.shopIphoneProducts .product img{
+    width: 250px;
+    height: auto;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 0px 10px;
+}
+
+/* Banner */
+
+.banner{
+    margin: 40px 0px;
+    padding: 0px 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url(img/banner/homeGeniusBarBanner.png);
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+}
+
+.banner p, .banner h2{
+    margin-bottom: 18px;    
+}
+
+.banner button:hover{
+    background-color: var(--accent-2);
+    color: var(--white);
+}
+
+/* Popular Products */
+
+.popularProducts{
+    padding: 40px 80px;
+    text-align: center;
+}
+
+.popular{
+    width: 350px;
+}
+
+.popularProducts .product img{
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+
+/* Home Bottom Banner Section */
+.bannerSection{
+    width: 100%;
+    padding: 40px 80px;                     
+}
+
+.big-banner-box, .small-banner-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.big-banner-box div, .small-banner-box div{
+    margin: 20px;
+}
+
+.banner-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 30px;
+}
+
+.big-banner-box h4, .big-banner-box h2{
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+}
+
+.small-banner-box div{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.small-banner-box div h4{
+    font-size: 16px;
+}
+
+#banner-box-1 button , #banner-box-3 button{
+    border: 1px solid var(--accent-2);
+    color: var(--accent-2)
+}
+
+#banner-box-1{
+    background-image: url(img/banner/icloudBanner.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+}
+
+#banner-box-2{
+    background-image: url(img/banner/appleWatchBanner2.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    color: var(--white)
+}
+
+#banner-box-3{
+    background-image: url(img/banner/airpodsBannerChoice3.jfif);
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    
+}
+
+#banner-box-4{
+    background-image: url(img/banner/appleMusicBanner.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    color: var(--white);
+
+}
+
+#banner-box-5{
+    background-image: url(img/banner/beatsBannerChoice2.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    color: var(--white);
+
+}
+
+
+/* Home Newsletter Section */
+
+.newsletter{
+    margin: 40px 0px;
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(images/banners/b14.png);
+    background-repeat: no-repeat ;
+    background-position: 20% 30%;
+    background-color: #041e42;
+}
+
+
+.newsletter h4{
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    padding: 10px 0px;
+}
+
+.newsletter p{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0px;
+    color: #818ea0;
+}
+
+.newsletter p span{
+    color: #088178;
+}
+
+.newsletter input{
+    height: 3.125rem;
+    padding: 0 1.25rem;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.newsletter button{
+    background-color: var(--accent-2);
+    color: var(--white);
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.newsletter .newsForm{
+    display: flex;
+    width: 40%;
+
+}
+
+.footer{
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footerColumnContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.footerColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footer #logo{
+    margin-bottom: 30px;
+}
+
+.footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+    font-weight: 500;
+}
+
+.footer p, .footer a{
+    font-size: 14px;
+    padding-bottom: 20px;
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.footer span{
+    font-weight: 700;
+}
+
+.footerColumn .footerSocials{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footerSocials .socials{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.footerSocials .socials i{
+    margin-right: 10px;
+}
+
+
+.footerColumn .downloadRow img{
+    border: 1px solid #088178;
+    border-radius: 4px;
+}
+
+.copyrightRow{
+    text-align: center;
+    font-size: 10px;
+}
+
+
+/* Responsive */
+@media (max-width: 1350px){
+    .categoriesContainer .categoryBox{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100px;
+        height: 80px;
+    }
+    .categoriesContainer .categoryBox i{
+        font-size: 20px;
+        padding-bottom: 5px;
+    }
+    .categoriesContainer .categoryBox h4{
+        font-size: 15px;
+    }
+
+    .productContainer{
+        flex-direction: column;
+    }
+
+    .shopIphoneProducts .product{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+    }
+
+    .shopIphoneProducts .product img{
+        width: 400px;
+        height: auto;
+        margin: 0;
+    }
+
+    .productDescription{
+        width: 300px;
+    }
+
+    .product .featured Product2 img{
+        height: 100px !important;
+        width: auto;
+        border-radius: 20px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .shopIphoneProducts .product img{
+        width: 220px;
+    }
+}
+
+@media (max-width: 900px){
+    .hamburgerContainer{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        z-index: 999;
+    }
+
+    .navbar ul{
+        transition: right 0.5s ease;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--accent-2);
+        z-index: 998;
+    }
+
+    .navbar ul :nth-child(1){
+        transition: all 0.3s linear;
+        transform: translateX(50px);
+    }
+
+    .navbar ul :nth-child(2){
+        transition: all 0.3s linear;
+        transition-delay: 0.15s;
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    .navbar ul :nth-child(3){
+        transition: all 0.3s linear;
+        transition-delay: 0.3s;
+        opacity: 0;
+        transform: translateX(70px);
+    }
+
+    .navbar ul :nth-child(4){
+        transition: all 0.3s linear;
+        transition-delay: 0.45s;
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    .navbar ul :nth-child(5){
+        transition: all 0.3s linear;
+        transition-delay: 0.6s;
+        opacity: 0;
+        transform: translateX(90px);
+    }
+
+    .navbar a{
+        color: var(--white);
+    }
+
+    .navbar a:hover, .navbar a.active{
+        color: var(--accent-1);
+    }
+
+    .navbar a::after{
+        background-color: var(--accent-1);
+
+    }
+
+    .navBarShown ul{
+        transition: right 0.5s ease;
+        right: 0;
+    }
+
+    .navBarShown li ,.navBarShown i{
+        transition: all 0.3s linear;
+        opacity: 1 !important;
+        transform: translateX(0px) !important;
+    }
+
+    .product .productDescription h3{
+        font-size: 18px;
+    }
+
+    .big-banner-box, .small-banner-box{
+        flex-direction: column;
+    }
+
+    .footerColumnContainer{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .footerColumn{
+        padding: 30px 0px;
+    }
+
+
+
+}

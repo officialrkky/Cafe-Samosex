@@ -383,21 +383,24 @@ body{
     width: 100%;
     height: 100%;
     transition: all 0.2s ease-in;
-    filter: blur(5px);
-    transform: scale(0.95);
+    transform: scale(0.9);
+    background-color: var(--grey);
+    color: var(--white);
 }
 
 .projectCard:hover{
     transition: all 0.2s linear;
     transform: scale(1);
-    filter: blur(0px);
+
+
 }
 
 #portfolioTitle{
     grid-column: 2/4;
     grid-row: 2/3;
     background-color: var(--black);
-    filter: blur(0px);
+    transform: scale(1);
+
 
 }   
 
@@ -407,63 +410,63 @@ body{
     font-weight: 700;
 }
 
-#cafeSamosexProject{
+#cafeSamosexProject:hover{
     background-color: black;
     color: yellow;
 
 }
 
-#sweetToothProject{
+#sweetToothProject:hover{
     background-color: lightcoral;
     color: lightskyblue;
 }
 
-#rikhilSharmaProject{
+#rikhilSharmaProject:hover{
     background-color: black;
     color: red;  
 }
 
-#anotherOnePoject{
+#anotherOnePoject:hover{
     background-color: green;
     color: orange;
 }
 
-#anotherTwoPoject{
+#anotherTwoPoject:hover{
     background-color: lightgoldenrodyellow;
     color: orangered;
 }
 
-#anotherThreePoject{
+#anotherThreePoject:hover{
     background-color: tan;
     color: khaki;
 }
 
-#anotherFourPoject{
+#anotherFourPoject:hover{
     background-color: teal;
     color: blanchedalmond;
 }
 
-#anotherFivePoject{
+#anotherFivePoject:hover{
     background-color: blueviolet;
     color: darkmagenta;
 }
 
-#anotherSixPoject{
+#anotherSixPoject:hover{
     background-color: lavender;
     color: darkcyan;
 }
 
-#anotherSevenPoject{
+#anotherSevenPoject:hover{
     background-color: sandybrown;
     color: khaki;
 }
 
-#anotherEightPoject{
+#anotherEightPoject:hover{
     background-color: olive;
     color: brown;
 }
 
-#anotherNinePoject{
+#anotherNinePoject:hover{
     background-color: palegreen;
     color: darkgreen;
 }
@@ -531,4 +534,35 @@ body{
     color: var(--black);
     font-size: 16px;
     cursor: pointer;
+}
+
+/* JS Effects */
+.aboutContent{
+    transform: scale(0.4);
+    transition: all 1s ease-out;
+}
+
+
+.aboutMeExpand{
+    transform: scale(1);
+    transition: all 1s ease-out;
+}
+
+
+.servicesContainer h1{
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 1s ease-out;
+}
+
+.servicesCards{
+    opacity: 0 ;
+    transform: translateY(15%);
+    transition: all 1s ease-out;
+}
+
+.servicesEffectActive{
+    opacity: 1 !important;
+    transform: translateY(0%) !important;
+    transition: all 1s ease-out;
 }

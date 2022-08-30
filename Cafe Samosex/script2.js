@@ -2,7 +2,7 @@ const aboutUsFaders = document.querySelectorAll(".aboutUsFadeIn");
 
 const aboutUsOptions = {
     thresehold: 1,
-    rootMargin: "-200px"
+    rootMargin: "-300px"
 }
 
 const aboutUsAppear = new IntersectionObserver
